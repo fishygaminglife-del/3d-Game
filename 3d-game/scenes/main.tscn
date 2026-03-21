@@ -1,3 +1,94 @@
 [gd_scene format=3 uid="uid://dbnc41v77aham"]
 
+[ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://8fpqsj6iqid5" path="res://models/chest_gold/chest_gold.glb" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://de52b5wceoatb" path="res://scenes/buildingitems/pillar.tscn" id="3_sugp2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_o5qli"]
+sky_material = SubResource("ProceduralSkyMaterial_sgp6g")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 2
+sky = SubResource("Sky_o5qli")
+tonemap_mode = 2
+
 [node name="Node3D" type="Node3D" unique_id=440233230]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=455755671]
+environment = SubResource("Environment_0wfyh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1289212230]
+transform = Transform3D(-0.955793, -0.26291743, 0.13165922, 0, 0.44775906, 0.89415425, -0.29404035, 0.8546264, -0.42796496, 0, -0.6, 0)
+shadow_enabled = true
+
+[node name="floor" type="CSGBox3D" parent="." unique_id=698028664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(39.7, 1, 42)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=2086959561]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=391747243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.83509, 3.65, -0.6500006)
+use_collision = true
+size = Vector3(1, 7.5, 24.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1629272725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.841527, 3.65, -0.45000076)
+use_collision = true
+size = Vector3(1, 7.5, 24.6)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1346817598]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0000005, 3.65, -12.2)
+use_collision = true
+size = Vector3(1, 7.5, 26.1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=999529102]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.5499988, 3.65, 11.8)
+use_collision = true
+size = Vector3(1, 7.5, 19.6)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D4" unique_id=1268077821]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05000019, -2.1499999, -0.69999975)
+operation = 2
+size = Vector3(1.3000001, 3.2, 2.1000001)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D" unique_id=763762062]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.5500017, 3.65, 5.85)
+use_collision = true
+size = Vector3(1, 7.5, 12.900001)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D8" unique_id=1612288798]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.05000019, -2.1499999, -0.69999975)
+operation = 2
+size = Vector3(1.3000001, 3.2, 2.1000001)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2057947576]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.250001, 3.65, 11.8)
+use_collision = true
+size = Vector3(1, 7.5, 14.2)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2081114799]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.1955695, 3.65, -0.10947129)
+use_collision = true
+size = Vector3(1, 7.5, 12.308863)
+
+[node name="ProtoController" parent="." unique_id=1905507172 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, -0.6, 2.500002)
+can_sprint = true
+can_freefly = true
+input_left = "move_left"
+input_right = "move_right"
+input_forward = "move_up"
+input_back = "move_down"
+input_jump = "jump"
+
+[node name="chest_gold2" parent="." unique_id=942622919 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1, 2.8, 21.5)
+
+[node name="StaticBody3D" parent="." unique_id=971982773 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.350374, 0, 4.30394)
