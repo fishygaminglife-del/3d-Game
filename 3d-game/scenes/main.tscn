@@ -20,12 +20,17 @@
 [ext_resource type="PackedScene" uid="uid://btbwybk85nxqe" path="res://scenes/props/table_medium.tscn" id="18_y6deb"]
 [ext_resource type="PackedScene" uid="uid://b0cegkqcs7tep" path="res://scenes/props/keg_decorated.tscn" id="19_og1vs"]
 [ext_resource type="PackedScene" uid="uid://6fjc7hiq5m1f" path="res://scenes/props/crates_stacked.tscn" id="21_vxglm"]
-[ext_resource type="PackedScene" uid="uid://1vca0k0llml4" path="res://models/props/torch_mounted.glb" id="22_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://bmetm58oykiiy" path="res://scenes/props/table_small.tscn" id="22_fv21b"]
+[ext_resource type="PackedScene" uid="uid://cbu84bof6n53q" path="res://models/props/keyring.glb" id="23_tel4y"]
 [ext_resource type="PackedScene" uid="uid://c2r58rljttcti" path="res://scenes/pause_menu.tscn" id="24_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://dxpxnrk0bchbm" path="res://images/Textbox.png" id="24_og1vs"]
+[ext_resource type="PackedScene" uid="uid://baknxwctpu30g" path="res://scenes/props/plate_food.tscn" id="24_qkpxi"]
 [ext_resource type="PackedScene" uid="uid://d360pfjpg3tiy" path="res://scenes/npc_1.tscn" id="24_y6deb"]
 [ext_resource type="PackedScene" uid="uid://dv2keeoce1ywf" path="res://scenes/hud.tscn" id="25_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://dni55u07855b" path="res://scenes/props/chair.tscn" id="25_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://bknfkwu72pegf" path="res://scenes/buildingitems/walll_window_closed.tscn" id="25_og1vs"]
+[ext_resource type="Script" uid="uid://cecrp2hxo7xdd" path="res://scripts/puzzle_1.gd" id="26_dgi5k"]
+[ext_resource type="PackedScene" uid="uid://c1wwjdf8tcupa" path="res://scenes/code_panel.tscn" id="27_tel4y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j8jky"]
 
@@ -118,9 +123,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e4rq3")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyji0"]
-radius = 0.3
-height = 1.1
+[sub_resource type="BoxShape3D" id="BoxShape3D_qkpxi"]
+size = Vector3(6.1, 1.1, 3.9)
 
 [sub_resource type="Animation" id="Animation_2wyq8"]
 length = 0.001
@@ -1254,55 +1258,193 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13.8
 transform = Transform3D(0.99999994, -1.4901161e-08, 0, 1.4901161e-08, 0.99999994, 0, 0, 0, 1, 8.200001, 0.3, -6.2999997)
 
 [node name="StaticBody3D8" parent="Props" unique_id=1046801690 instance=ExtResource("19_og1vs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.200001, 0.1, -10.3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.700001, 0.1, -9.900001)
 
 [node name="StaticBody3D10" parent="Props" unique_id=271352052 instance=ExtResource("21_vxglm")]
-transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 12.4, 0.100000024, 1.5999999)
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 11.9, 0.100000024, 1.5999999)
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="Props" unique_id=1042765232]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, 1.3999999, -11.1)
+[node name="StaticBody3D6" parent="Props" unique_id=1970081755 instance=ExtResource("22_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.1, 9.900001)
 
-[node name="torch_mounted2" parent="Props/StaticBody3D6" unique_id=56119308 instance=ExtResource("22_2wyq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
+[node name="keyring2" parent="Props" unique_id=1900737762 instance=ExtResource("23_tel4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2, 1.3000001, -6)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/StaticBody3D6" unique_id=1666626877]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.25, -0.4)
-shape = SubResource("CapsuleShape3D_lyji0")
+[node name="StaticBody3D9" parent="Props" unique_id=107979043 instance=ExtResource("22_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6, 0.1, -0.2)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Props/StaticBody3D6" unique_id=1429020767]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09999976, 0.19999993, -0.39999983)
-light_color = Color(0.95506555, 1.1358858e-05, 0.62845504, 1)
-omni_range = 15.0
+[node name="StaticBody3D11" parent="Props" unique_id=357634127 instance=ExtResource("22_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2, 0.1, -1.5)
 
-[node name="StaticBody3D9" type="StaticBody3D" parent="Props" unique_id=517444033]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 13, 1.3999999, -1.7000005)
+[node name="StaticBody3D12" parent="Props" unique_id=635963760 instance=ExtResource("22_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2000003, 0.1, 1.2)
 
-[node name="torch_mounted2" parent="Props/StaticBody3D9" unique_id=1082085278 instance=ExtResource("22_2wyq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
+[node name="StaticBody3D13" parent="Props" unique_id=849137989 instance=ExtResource("22_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0.1, -0.2)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/StaticBody3D9" unique_id=881171798]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.25, -0.4)
-shape = SubResource("CapsuleShape3D_lyji0")
+[node name="StaticBody3D14" parent="Props" unique_id=1136506007 instance=ExtResource("24_qkpxi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3, 1.1, 1.1)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Props/StaticBody3D9" unique_id=1299765031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09999976, 0.19999993, -0.39999983)
-light_color = Color(0.95506555, 1.1358858e-05, 0.62845504, 1)
-omni_range = 15.0
+[node name="StaticBody3D15" parent="Props" unique_id=1177312553 instance=ExtResource("25_5q0nq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0.1, 10.1)
 
-[node name="StaticBody3D11" type="StaticBody3D" parent="Props" unique_id=585612659]
-transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, -13, 1.3999999, 6.299999)
+[node name="puzzle1" type="Node3D" parent="." unique_id=385877242]
+script = ExtResource("26_dgi5k")
 
-[node name="torch_mounted2" parent="Props/StaticBody3D11" unique_id=1385053089 instance=ExtResource("22_2wyq8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
+[node name="StaticBody3D" parent="puzzle1" unique_id=476623216 instance=ExtResource("27_tel4y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1.6, -12)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/StaticBody3D11" unique_id=1221847234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, -0.25, -0.4)
-shape = SubResource("CapsuleShape3D_lyji0")
+[node name="Wall1" type="Label3D" parent="puzzle1" unique_id=1407911128]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, 0.6427877, 0, -0.6427877, 0.76604444, 13, 0.4, 0.19999999)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Props/StaticBody3D11" unique_id=1170588687]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09999976, 0.19999993, -0.39999983)
-light_color = Color(0.95506555, 1.1358858e-05, 0.62845504, 1)
-omni_range = 15.0
+[node name="Pillar1" type="Label3D" parent="puzzle1" unique_id=689622821]
+transform = Transform3D(-0.6951736, -0.32935488, 0.6389516, -0.00010049716, 0.8889071, 0.45808777, -0.71884185, 0.31838626, -0.6179776, -3.7580383, 0.5210614, -0.65851974)
+
+[node name="Chair1" type="Label3D" parent="puzzle1" unique_id=95749433]
+transform = Transform3D(-1, -2.9832145e-15, 8.7422784e-08, 8.7422784e-08, -4.4703484e-08, 1, 1.7763568e-15, 1, 4.4703484e-08, -12.007434, 0.15332595, 9.50183)
+
+[node name="Barrel1" type="Label3D" parent="puzzle1" unique_id=364186977]
+transform = Transform3D(1, 8.742278e-08, -8.7422784e-08, -8.742278e-08, 0.99999994, 8.940697e-08, 8.742278e-08, -8.940697e-08, 0.99999994, -10.07599, 1.3285549, -9.042557)
+text = "314"
+
+[node name="CODEE" type="Label3D" parent="puzzle1" unique_id=512644562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3999998, 1.4999998, -11.700001)
+billboard = 1
+no_depth_test = true
+text = "E"
+outline_size = 67
+
+[node name="KeyPadZoom" type="ColorRect" parent="puzzle1" unique_id=1832301918]
+offset_left = 377.0
+offset_top = 11.0
+offset_right = 791.0
+offset_bottom = 631.0
+color = Color(0.32172796, 0.32172796, 0.32172796, 1)
+
+[node name="Check" type="ColorRect" parent="puzzle1/KeyPadZoom" unique_id=2023985454]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 540.0
+offset_right = 153.0
+offset_bottom = 604.0
+color = Color(0, 0.64705884, 0, 1)
+
+[node name="Check2" type="ColorRect" parent="puzzle1/KeyPadZoom" unique_id=1224769201]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 540.0
+offset_right = 373.0
+offset_bottom = 604.0
+color = Color(1, 0, 0, 1)
+
+[node name="Close" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1870423626]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 242.0
+offset_top = 538.0
+offset_right = 380.0
+offset_bottom = 610.0
+
+[node name="Check3" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1991902576]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 534.0
+offset_right = 158.0
+offset_bottom = 610.0
+
+[node name="CodeSHow" type="Label" parent="puzzle1/KeyPadZoom" unique_id=1749662453]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 3.0
+offset_right = 289.0
+offset_bottom = 97.0
+
+[node name="b1" type="Button" parent="puzzle1/KeyPadZoom" unique_id=526128171]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 114.0
+offset_right = 100.0
+offset_bottom = 167.0
+theme_override_font_sizes/font_size = 32
+text = "1"
+
+[node name="b2" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1648839628]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 119.0
+offset_right = 229.0
+offset_bottom = 172.0
+theme_override_font_sizes/font_size = 32
+text = "2"
+
+[node name="b3" type="Button" parent="puzzle1/KeyPadZoom" unique_id=540943162]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 120.0
+offset_right = 358.0
+offset_bottom = 173.0
+theme_override_font_sizes/font_size = 32
+text = "3"
+
+[node name="b4" type="Button" parent="puzzle1/KeyPadZoom" unique_id=242104822]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 228.0
+offset_right = 101.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 32
+text = "4"
+
+[node name="b5" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1225525077]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 227.0
+offset_right = 229.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 32
+text = "5"
+
+[node name="b6" type="Button" parent="puzzle1/KeyPadZoom" unique_id=704659902]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 227.0
+offset_right = 361.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 32
+text = "6"
+
+[node name="b7" type="Button" parent="puzzle1/KeyPadZoom" unique_id=673384037]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 365.0
+offset_right = 102.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 32
+text = "7"
+
+[node name="b8" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1783978939]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 358.0
+offset_right = 224.0
+offset_bottom = 411.0
+theme_override_font_sizes/font_size = 32
+text = "8"
+
+[node name="b9" type="Button" parent="puzzle1/KeyPadZoom" unique_id=1085561796]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 362.0
+offset_right = 363.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 32
+text = "9"
+
+[node name="Panel1" type="Area3D" parent="puzzle1" unique_id=990582826]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="puzzle1/Panel1" unique_id=2120991911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7499998, 0.75, -10.05)
+shape = SubResource("BoxShape3D_qkpxi")
 
 [node name="TextPlayer" type="AnimationPlayer" parent="." unique_id=520797454]
 libraries/ = SubResource("AnimationLibrary_yq6so")
@@ -1353,6 +1495,7 @@ render_priority = 1
 text = "👇"
 
 [node name="CanvasLayer" parent="." unique_id=1990391779 instance=ExtResource("25_2wyq8")]
+visible = false
 
 [node name="NPCE" type="Label3D" parent="." unique_id=1089942683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, 1.9999999, -6.3)
@@ -1368,5 +1511,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 1.2, -6.15)
 shape = SubResource("BoxShape3D_pm3ni")
 
 [node name="CanvasLayer2" parent="." unique_id=805417408 instance=ExtResource("24_2wyq8")]
+visible = false
 
+[connection signal="pressed" from="puzzle1/KeyPadZoom/Close" to="puzzle1" method="_on_close_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/Check3" to="puzzle1" method="_on_check_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b1" to="puzzle1" method="_on_b_1_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b2" to="puzzle1" method="_on_b_2_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b3" to="puzzle1" method="_on_b_3_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b4" to="puzzle1" method="_on_b_4_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b5" to="puzzle1" method="_on_b_5_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b6" to="puzzle1" method="_on_b_6_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b7" to="puzzle1" method="_on_b_7_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b8" to="puzzle1" method="_on_b_8_pressed"]
+[connection signal="pressed" from="puzzle1/KeyPadZoom/b9" to="puzzle1" method="_on_b_9_pressed"]
+[connection signal="body_entered" from="puzzle1/Panel1" to="puzzle1" method="_on_panel_1_body_entered"]
+[connection signal="body_exited" from="puzzle1/Panel1" to="puzzle1" method="_on_panel_1_body_exited"]
 [connection signal="body_entered" from="NPCTalk" to="." method="_on_npc_talk_body_entered"]

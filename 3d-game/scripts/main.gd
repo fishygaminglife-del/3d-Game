@@ -2,10 +2,14 @@ extends Node3D
 
 var can_interact = false
 var counts = 0
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
+	$puzzle1/KeyPadZoom.visible = false
+	$puzzle1/Panel1/CollisionShape3D.disabled = true
 	$Npc1point.visible = false
 	$NPCE.visible = false
+	$puzzle1/CODEE.visible = false
 	$Building/StaticCollision/CollisionShape3D6.position = Vector3(-6, 1.5, 11.8)
 	$Building/StaticCollision.rotation_degrees = Vector3(0, 0, 0)
 	$TextPlayer/Text.text = "Welcome to my first 3D Game"
@@ -24,6 +28,8 @@ func _input(event):
 		can_interact = false
 		$Npc1point.visible = false
 		if counts == 0:
+			counts = 1
+			$NPCTalk/CollisionShape3D.disabled = true
 			$TextPlayer/Name.text = "Zombie"
 			$TextPlayer/Text.text = "Howdy player, I am your guide today."
 			$TextPlayer.play("textplay")
@@ -34,7 +40,8 @@ func _input(event):
 			$TextPlayer/Textbox.visible = false
 			$TextPlayer/Name.visible = false
 			$TextPlayer/Text.visible = false
-			
+			$puzzle1/Panel1/CollisionShape3D.disabled = false
+
 func _on_npc_talk_body_entered(body: Node3D) -> void:
 	$NPCE.visible = true
 	can_interact = true

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c1wwjdf8tcupa"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_14eko"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svj3w"]
+albedo_color = Color(0.7121294, 0.7121294, 0.71212935, 1)
+metallic = 1.0
+metallic_texture = SubResource("CanvasTexture_14eko")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0md4x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hrm36"]
+size = Vector3(0.6, 0.90000004, 0.4)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=476623216]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=68874989]
+transform = Transform3D(0.7, 0, 0, 0, 1, 0, 0, 0, 0.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_svj3w")
+mesh = SubResource("BoxMesh_0md4x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=771780416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049999982, -1.4901161e-08)
+shape = SubResource("BoxShape3D_hrm36")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=2030772503]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25944376, 0.2544242)
+text = "Code 
+Panel"
