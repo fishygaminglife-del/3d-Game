@@ -483,6 +483,34 @@ tracks/6/keys = {
 "update": 0,
 "values": [Vector3(-1.8499999, 1.5499998, -12.1)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Building/StaticBody3D145:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.9, 0.2, -20.2)]
+}
+
+[sub_resource type="Animation" id="Animation_qkpxi"]
+resource_name = "code_correct"
+length = 1.85
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Building/StaticBody3D145:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.53333336, 0.76666665, 0.96666664, 1.8333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(5.9, 0.2, -20.2), Vector3(6, 0.2, -20.2), Vector3(5.7, 0.2, -20.2), Vector3(6, 0.2, -20.2), Vector3(5.9, 0.2, -20.2), Vector3(5.9, 4.1, -20.2)]
+}
 
 [sub_resource type="Animation" id="Animation_yq6so"]
 resource_name = "new_animation"
@@ -577,6 +605,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fv21b"]
 _data = {
 &"RESET": SubResource("Animation_og1vs"),
+&"code_correct": SubResource("Animation_qkpxi"),
 &"door_open": SubResource("Animation_yq6so"),
 &"door_open2": SubResource("Animation_fuf3a")
 }
@@ -602,7 +631,7 @@ use_collision = true
 size = Vector3(106.1, 1, 141.8)
 
 [node name="ProtoController" parent="." unique_id=1905507172 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0000005, 0, 17.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0000005, 0, 15.6)
 can_sprint = true
 can_freefly = true
 input_left = "move_left"
@@ -1651,7 +1680,7 @@ shape = SubResource("BoxShape3D_qkpxi")
 script = ExtResource("27_5q0nq")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="puzzle2" unique_id=1625046514]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8, 1.8999996, -27.300001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9, 1.8999996, -27.300001)
 
 [node name="torch_mounted2" parent="puzzle2/StaticBody3D" unique_id=56119308 instance=ExtResource("27_qkpxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
@@ -1668,7 +1697,7 @@ light_energy = 2.0
 omni_range = 15.0
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="puzzle2" unique_id=175303471]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 1.8999996, -27.300001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1000004, 1.8999996, -27.300001)
 
 [node name="torch_mounted2" parent="puzzle2/StaticBody3D2" unique_id=1023275688 instance=ExtResource("27_qkpxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10647893, -0.39999998, -0.70000076)
@@ -1685,7 +1714,7 @@ light_energy = 2.0
 omni_range = 15.0
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="puzzle2" unique_id=507095424]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.8999996, -27.300001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29999998, 1.8999996, -27.300001)
 
 [node name="torch_mounted2" parent="puzzle2/StaticBody3D3" unique_id=947781118 instance=ExtResource("27_qkpxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
@@ -1702,7 +1731,7 @@ light_energy = 2.0
 omni_range = 15.0
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="puzzle2" unique_id=181634685]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.8999996, -27.300001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8000002, 1.8999996, -27.300001)
 
 [node name="torch_mounted2" parent="puzzle2/StaticBody3D4" unique_id=917628245 instance=ExtResource("27_qkpxi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.099999964, -0.39999998, -0.70000005)
@@ -1719,22 +1748,23 @@ light_energy = 2.0
 omni_range = 15.0
 
 [node name="Torch1" type="Label3D" parent="puzzle2" unique_id=939457624]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7000003, 2.3000002, -27.800001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8, 2.3000002, -27.800001)
 text = "1"
 
 [node name="Torch2" type="Label3D" parent="puzzle2" unique_id=703088856]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8000002, 2.3000002, -27.800001)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0000005, 2.3000002, -27.800001)
 text = "2"
 
 [node name="Torch3" type="Label3D" parent="puzzle2" unique_id=1366047830]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8951611, 2.3000002, -27.76571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19516107, 2.3000002, -27.76571)
 text = "3"
 
 [node name="Torch4" type="Label3D" parent="puzzle2" unique_id=1884747000]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9033377, 2.3000002, -27.83062)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.903338, 2.3000002, -27.83062)
 text = "4"
 
 [node name="TrigerT1" type="Area3D" parent="puzzle2" unique_id=1231998022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="puzzle2/TrigerT1" unique_id=840110547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.662625, 0.86953354, -25.376108)
@@ -1748,6 +1778,7 @@ text = "E"
 outline_size = 67
 
 [node name="TrigerT2" type="Area3D" parent="puzzle2" unique_id=1945208427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20000002, 0, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="puzzle2/TrigerT2" unique_id=987772933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.821682, 0.86953354, -25.42995)
@@ -1761,6 +1792,7 @@ text = "E"
 outline_size = 67
 
 [node name="TrigerT3" type="Area3D" parent="puzzle2" unique_id=317124461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.70000005, 0, 0)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="puzzle2/TrigerT3" unique_id=1737091224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.86758214, 0.86953354, -25.376104)
@@ -1774,6 +1806,7 @@ text = "E"
 outline_size = 67
 
 [node name="TrigerT4" type="Area3D" parent="puzzle2" unique_id=895883970]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="puzzle2/TrigerT4" unique_id=802850569]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7927868, 0.86953354, -25.376106)
@@ -1785,6 +1818,10 @@ billboard = 1
 no_depth_test = true
 text = "E"
 outline_size = 67
+
+[node name="CodeWall" type="Label3D" parent="puzzle2" unique_id=2033240891]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -17.2, 2.1, -20.000002)
+double_sided = false
 
 [node name="TextPlayer" type="AnimationPlayer" parent="." unique_id=520797454]
 libraries/ = SubResource("AnimationLibrary_yq6so")
