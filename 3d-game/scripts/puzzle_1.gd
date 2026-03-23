@@ -9,6 +9,7 @@ var label = randi_range(1, 4)
 
 
 func _ready() -> void:
+	$KeyPadZoom/CodeSHow.text = ""
 	if label == 1:
 		$Wall1.text = correct_code
 		$Pillar1.visible = false
@@ -39,18 +40,27 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 func _on_panel_1_body_entered(body: Node3D) -> void:
-	Global.keypad = true
-	$CODEE.visible = true
+		Global.keypad = true
+		$CODEE.visible = true
 func _on_panel_1_body_exited(body: Node3D) -> void:
 	Global.keypad = false
 	$CODEE.visible = false	
 func add_number(num):
 	code_input.append(num)
 	$KeyPadZoom/CodeSHow.text =  "".join(code_input.map(str))
-
-func _on_check_pressed() -> void:
-	pass
-
+	if code_input.size() == 3:
+		check_code()
+		
+func check_code():   
+	if "".join(code_input.map(str)) == correct_code:
+		$"../MainScene".play("door_open2")
+		$KeyPadZoom.visible = false
+		Global.keypad = false
+		Global.can_torch = true
+		$CODEE.visible = false
+	else:
+		code_input.clear()
+		$KeyPadZoom/CodeSHow.text =  ""
 func _on_close_pressed() -> void:
 	$KeyPadZoom.visible = false
 	code_input = []

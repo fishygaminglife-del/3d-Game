@@ -5,6 +5,7 @@ var counts = 0
 
 
 func _ready() -> void:
+	$puzzle1/CODEE.visible = false
 	$puzzle1/KeyPadZoom.visible = false
 	$puzzle1/Panel1/CollisionShape3D.disabled = true
 	$Npc1point.visible = false
@@ -12,7 +13,7 @@ func _ready() -> void:
 	$puzzle1/CODEE.visible = false
 	$Building/StaticCollision/CollisionShape3D6.position = Vector3(-6, 1.5, 11.8)
 	$Building/StaticCollision.rotation_degrees = Vector3(0, 0, 0)
-	$TextPlayer/Text.text = "Welcome to my first 3D Game"
+	$TextPlayer/Text.text = "Welcome to my first 3D Game, hope you enjoy it!"
 	$TextPlayer.play("textplay")
 	await $TextPlayer.animation_finished
 	$TextPlayer/Textbox.visible = false
