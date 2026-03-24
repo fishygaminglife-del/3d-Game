@@ -26,7 +26,6 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("interact") and can_interact:
 		$NPCE.visible = false
-		can_interact = false
 		$Npc1point.visible = false
 		if counts == 0:
 			counts = 1
@@ -35,14 +34,30 @@ func _input(event):
 			$TextPlayer/Text.text = "Howdy player, I am your guide today."
 			$TextPlayer.play("textplay")
 			await $TextPlayer.animation_finished
-			$TextPlayer/Text.text = "I hope you enjoy this fun upcomming game, now let's get into it. "
+			$TextPlayer/Text.text = "Find the code in this room, and enter it on the code panel to proceed."
 			$TextPlayer.play("text_play")
 			await $TextPlayer.animation_finished			
 			$TextPlayer/Textbox.visible = false
 			$TextPlayer/Name.visible = false
 			$TextPlayer/Text.visible = false
 			$puzzle1/Panel1/CollisionShape3D.disabled = false
-
+			can_interact = true
+		if can_interact == true:
+			$TextPlayer/Text.text = "Find the code in this room, and enter it on the code panel to proceed."
+			$TextPlayer.play("text_play")
+			await $TextPlayer.animation_finished			
+			$TextPlayer/Textbox.visible = false
+			$TextPlayer/Name.visible = false
+			$TextPlayer/Text.visible = false
+			$puzzle1/Panel1/CollisionShape3D.disabled = false
+		elif Global.can_torch == true:
+			$TextPlayer/Text.text = "Find the code in this room, and light torches based on number order."
+			$TextPlayer.play("text_play")
+			await $TextPlayer.animation_finished			
+			$TextPlayer/Textbox.visible = false
+			$TextPlayer/Name.visible = false
+			$TextPlayer/Text.visible = false
+			$puzzle1/Panel1/CollisionShape3D.disabled = false
 func _on_npc_talk_body_entered(body: Node3D) -> void:
 	$NPCE.visible = true
 	can_interact = true

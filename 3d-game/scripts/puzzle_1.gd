@@ -58,6 +58,7 @@ func check_code():
 		Global.keypad = false
 		Global.can_torch = true
 		$CODEE.visible = false
+		
 	else:
 		code_input.clear()
 		$KeyPadZoom/CodeSHow.text =  ""

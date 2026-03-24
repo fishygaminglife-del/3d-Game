@@ -40,6 +40,8 @@ func _input(event):
 			add_number(4)
 func add_number(num):
 	code_input.append(num)
+	$"../puzzle1/CODEE".visible = false
+	Global.keypad = false
 	if code_input.size() == 4:
 		if code_input == correct_order:
 			print("correct")
@@ -59,42 +61,38 @@ func add_number(num):
 			t_4 = 0
 			
 func _on_triger_t_1_body_entered(body: Node3D) -> void:
+	Global.can_torch = true
 	if t_1 == 0:
 		t_1 = 1
 		cur_torch = 1
 		$TrigerT1/Torch1.visible = true
-	
 func _on_triger_t_1_body_exited(body: Node3D) -> void:
 		$TrigerT1/Torch1.visible = false
 		cur_torch = 0
-
 func _on_triger_t_2_body_entered(body: Node3D) -> void:
+	Global.can_torch = true
 	if t_2 == 0:
 		t_2 = 1
 		cur_torch = 2
 		$TrigerT2/Torch2.visible = true
-
 func _on_triger_t_2_body_exited(body: Node3D) -> void:
 	cur_torch = 0
 	$TrigerT2/Torch2.visible = false
-
 func _on_triger_t_3_body_entered(body: Node3D) -> void:
+	Global.can_torch = true
 	if t_3 == 0:
 		t_3 = 1
 		cur_torch = 3
 		$TrigerT3/Torch3.visible = true
-
 func _on_triger_t_3_body_exited(body: Node3D) -> void:
 	cur_torch = 0
 	$TrigerT3/Torch3.visible = false
-
 func _on_triger_t_4_body_entered(body: Node3D) -> void:
+	Global.can_torch = true
 	if t_4 == 0:
 		t_4 = 1
 		cur_torch = 4
 		$TrigerT4/Torch4.visible = true
-
-
 func _on_triger_t_4_body_exited(body: Node3D) -> void:
 	cur_torch = 0
 	$TrigerT4/Torch4.visible = false
